@@ -1,0 +1,4 @@
+; Move right over 0/1, halt when blank reached.
+0 0 0 r 0
+0 1 1 r 0
+0 _ _ * halt

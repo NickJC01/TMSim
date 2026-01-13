@@ -1,0 +1,6 @@
+; While tape1 has 0/1 and tape2 is blank, copy symbol from tape1 to tape2 and move both right.
+0 0 _ 0 0 r r 0
+0 1 _ 1 1 r r 0
+
+; When tape1 hits blank, halt (leave heads where they are).
+0 _ _ _ _ * * halt

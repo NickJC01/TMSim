@@ -1,0 +1,19 @@
+; copy input to tape2 while moving right on both tapes
+0 a _ a a r r 0
+0 b _ b b r r 0
+
+; At end (both blank), move both heads left onto the last symbol
+0 _ _ _ _ l l 1
+
+; move tape1 head back to the left end; keep tape2 parked on last symbol
+1 a * a * l * 1
+1 b * b * l * 1
+; when tape1 hits blank just left of the string, move right to cell 0
+1 _ * _ * r * 2
+
+; overwrite tape1 left-to-right from tape2 right-to-left (this creates the reverse)
+2 * a a a r l 2
+2 * b b b r l 2
+
+; when tape2 is exhausted (blank), halt
+2 * _ * _ * * halt

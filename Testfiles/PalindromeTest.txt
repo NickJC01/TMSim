@@ -1,0 +1,34 @@
+; Palindrome decider over {0,1}. Uses '_' as blank. Marks by erasing.
+
+; --- State 0: read leftmost remaining symbol, erase it, remember if it was 0 or 1 ---
+0 0 _ r 1o
+0 1 _ r 1i
+0 _ _ * halt            ; if nothing left, accept
+
+; --- State 1o / 1i: scan right to the end (blank), then step left to last symbol ---
+1o 0 0 r 1o
+1o 1 1 r 1o
+1o _ _ l 2o
+
+1i 0 0 r 1i
+1i 1 1 r 1i
+1i _ _ l 2i
+
+; --- State 2o: expect rightmost symbol 0; erase it; if blank => accept; else reject ---
+2o 0 _ l 3
+2o _ _ * halt
+2o 1 1 * halt-reject
+
+; --- State 2i: expect rightmost symbol 1; erase it; if blank => accept; else reject ---
+2i 1 _ l 3
+2i _ _ * halt
+2i 0 0 * halt-reject
+
+; --- State 3/4: go back to the left end of remaining input (blank), then step right and repeat ---
+3 0 0 l 4
+3 1 1 l 4
+3 _ _ * halt            ; if we erased the last pair, accept
+
+4 0 0 l 4
+4 1 1 l 4
+4 _ _ r 0
