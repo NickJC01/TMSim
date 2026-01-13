@@ -4,7 +4,7 @@ This program simulates a 1-tape or 2-tape deterministic Turing Machine.
 You can load a machine from a text file or type rules directly into the editor.
 You choose the number of tapes, the input string w, and the initial state in the UI.
 
-This code borrowed heavily from the technical details available on Turing Machines from ~https://morphett.info/turing/~, so we give thanks to the contributors at Morphett for their work.
+This code borrowed heavily from the technical details available on Turing Machines from [Morphett](https://morphett.info/turing/), so we give thanks to the contributors at Morphett for their work.
 
 Test input Turing machines can be found in the parent directory of the program under "Testfiles"
 
