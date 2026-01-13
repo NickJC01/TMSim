@@ -30,13 +30,13 @@ TM file (or editor box) should contain ONLY rules and comments
 
 - Symbols are single characters: 0, 1, a, b, _, etc.
 - '_' is a blank.
-- '*' is a wildcard, '*' is NOT blank.
+- "*" is a wildcard, '*' is NOT blank.
 
 Moves:
 Use one of these:
 - l  = move left
 - r  = move right
-- *  = do not move
+- "*"  = do not move
 
 Halting:
 Any state name that starts with "halt" will halt the machine.
@@ -45,11 +45,11 @@ Examples: halt, halt-accept, halt-reject
 Wildcards (*) can be used in rules:
 
 Read wildcard:
-	- '*' in a READ position matches any symbol in that tape cell.
+	- "*" in a READ position matches any symbol in that tape cell.
 Write wildcard:
-	- '*' in a WRITE position means "leave the symbol unchanged" on that tape.
+	- "*" in a WRITE position means "leave the symbol unchanged" on that tape.
 Next state wildcard:
-	- If next state is '*', the machine stays in the same state.
+	- If next state is "*", the machine stays in the same state.
 
 Breakpoint (!): You can end a rule with '!' to pause after that rule is executed like found in the Morphett system.
 
