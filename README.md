@@ -30,7 +30,7 @@ TM file (or editor box) should contain ONLY rules and comments
 
 - Symbols are single characters: 0, 1, a, b, _, etc.
 - '_' is a blank.
-- "*" is a wildcard, '*' is NOT blank.
+- "*" is a wildcard, "*" is NOT blank.
 
 Moves:
 Use one of these:
